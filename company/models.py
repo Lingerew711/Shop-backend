@@ -23,8 +23,7 @@ class Product(models.Model):
 
 class WishList(models.Model):
 
-    wishlist_id = models.AutoField(primary_key=True)
-    product_id = models.ForeignKey(Product, related_name='product', on_delete=models.CASCADE)
+    product_id = models.ForeignKey(Product, related_name='product', on_delete=models.CASCADE, primary_key=True)
     product_name = models.ManyToManyField(Product)
     date = models.DateField(default=datetime.utcnow)
     # product = models.FilteredRelation('Product', back_populates='wishlists')

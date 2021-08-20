@@ -26,7 +26,7 @@ class ProductNode(DjangoObjectType):
 
 class WishListNode(DjangoObjectType):
     class Meta:
-        filter_fields = ("wishlist_id", "product_id","product_name", "date")
+        filter_fields = ( "product_id","product_name", "date")
         model = WishList
         interfaces = (graphene.relay.Node,)
         ordered = True
